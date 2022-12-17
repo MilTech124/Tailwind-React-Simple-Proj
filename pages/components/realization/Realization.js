@@ -3,7 +3,7 @@ import Image from "next/image";
 import Masonry from "react-masonry-css";
 
 function Realization() {
-  const css = { width: "100%", height: "400px" };
+  const css = { width: "100%", height: "500px" };
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -37,7 +37,7 @@ function Realization() {
     },
   ];
   return (
-    <div className="text-center py-20 bg-gray-800 text-white">
+    <div className="text-center pt-10 pb-20 bg-gray-800 text-white">
       <h2 className="text-4xl font-bold pb-5">Realizacje</h2>
       <p className="container m-auto py-5 max-w-4xl text-xl">
         W swoim dorobku posiadamy prace o zróżnicowanym stopniu trudności,
@@ -51,16 +51,16 @@ function Realization() {
         columnClassName="my-masonry-grid_column"
       >
         {images.map((image,index) => (
-         
-            <Image
-              key={index}
-              src={image.src}
-              width="565"
-              height="668"
-              sizes="100vw"
-              style={css}
-              className="img-fluid glightbox3 max-w-full w-full h-auto hover:scale-105 transition-all ease-in cursor-pointer"
-            />
+          
+              <Image
+                key={index}
+                src={image.src}
+                width="565"
+                height="668"
+                sizes="100vw"
+                style={css}
+                className="img-fluid glightbox3 max-w-full w-full h-auto hover:scale-105 transition-all ease-in cursor-pointer"
+              />           
          
         ))}
       </Masonry>
