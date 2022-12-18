@@ -8,7 +8,7 @@ function Footer() {
           <h3 className='font-cinzel text-2xl'>MARIUSZ NOWAK</h3>
           <p className=''>Usługi Glazurnicze</p>
           <img className='object-center hover:scale-105' src="/svg/Facebook2.svg"/>
-          <p>Słopnice ###</p>
+          <p>Słopnice 1439</p>
           <p>Nip : 737 194 82 57</p>
         </div>
         <div className='text-white max-w-md col-span-1 px-2'>

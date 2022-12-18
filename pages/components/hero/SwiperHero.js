@@ -37,7 +37,8 @@ export default function swiperHero() {
           height="668"
           sizes="100vw"
           style={css}
-          className="img-fluid"/>
+          className="img-fluid"
+          alt="something"/>
         </SwiperSlide>       
         <SwiperSlide>
           <Image src='/images/6.jpg'

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
 
+
 function Realization() {
   const css = { width: "100%", height: "500px" };
   const breakpointColumnsObj = {

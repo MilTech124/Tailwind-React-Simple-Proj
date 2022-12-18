@@ -56,7 +56,7 @@ function realizacje() {
         columnClassName="my-masonry-grid_column cursor-pointer"
       >
         {images.map((image, index) => (
-          <Image
+         <Fade> <Image
             key={index}
             src={image.src}
             width="565"
@@ -66,7 +66,9 @@ function realizacje() {
             className="img-fluid "
             onClick={()=>setTogle(image.src)}
           />
+          </Fade>
         ))}
+        
       </Masonry>
     </section>
   );
