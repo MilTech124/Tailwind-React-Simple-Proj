@@ -42,7 +42,7 @@ function services() {
    <div className='grid grid-cols-2 max-sm:grid-cols-1 py-10 justify-items-center gap-0 max-w-7xl m-auto'>
     {icons.map(icon=>     
      (       
-     <div key={icon.head} className={'smal-container max-sm:mb-5 lg:max-h-[135px] bg-zinc-600 py-4 flex max-w-xl px-2 ' + (icon.right ? 'lg:flex-row-reverse lg:text-left lg:mt-20' : 'lg:text-right')}>
+     <div key={icon.head} className={'smal-container max-sm:mb-5 lg:max-h-[135px] hover:rotate-1 transition-all bg-zinc-600 py-4 flex max-w-xl px-2 ' + (icon.right ? 'lg:flex-row-reverse lg:text-left lg:mt-20' : 'lg:text-right')}>
         <div className='text-white '>
             <h3 className='text-xl font-bold '>{icon.head}</h3>
             <p>{icon.desc}</p>
