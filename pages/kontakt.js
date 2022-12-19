@@ -1,8 +1,38 @@
 import React from "react";
+import Head from "next/head";
 
 function kontakt() {
   return (
-    <section
+  <>
+     <Head>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Usługi glazurnicze" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta
+          name="keywords"
+          content="nm-fliz, usługi glazurnicze, układanie płytek, układanie glazury, układanie płytek słopnice, układanie płytek limanowa, glazurnik limanowa "
+        />
+        <title>Kontakt MN-Fliz</title>
+      </Head>    
+      <section
       id="kontakt"
       className=" text-white max-sm:p-5 p-20 bg-no-repeat bg-center bg-cover w-full"
       style={{ backgroundImage: "url(/images/10.jpg)" }}
@@ -33,7 +63,9 @@ function kontakt() {
           </a>
         </div>
       </div>
-    </section>
+    </section>  
+  </>
+   
   );
 }
 
