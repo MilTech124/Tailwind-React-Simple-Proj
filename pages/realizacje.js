@@ -16,11 +16,12 @@ function Realizacje({data}) {
     500: 1,
   };
   const [toggler, setToggler] = useState(false);
-  const [imgs, setImg] = useState(null);
+  const [img, setImg] = useState(null);
 
   const setTogle = (imgs) => {
     setImg(imgs);
     setToggler(!toggler);
+    console.log(img);
   };
   return (
     <>
@@ -53,7 +54,7 @@ function Realizacje({data}) {
         <title>Realizacje</title>
       </Head>
       <section>
-        <FsLightbox toggler={toggler} sources={[imgs]} />
+        <FsLightbox toggler={toggler} sources={[img]} />
 
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -61,7 +62,8 @@ function Realizacje({data}) {
           columnClassName="my-masonry-grid_column cursor-pointer"
         >
            {data.acf.galleria.map((item) => (
-            <Fade key={item.id}>             
+          
+            <Fade key={item.id}>           
             <Image             
               src={item.full_image_url}
               width="565"
