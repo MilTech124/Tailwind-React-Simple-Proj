@@ -7,7 +7,7 @@ import { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 
-function Realizacje({data}) {
+function Realizacje({ data }) {
   const css = { width: "100%", height: "object-fit" };
   const breakpointColumnsObj = {
     default: 3,
@@ -17,6 +17,7 @@ function Realizacje({data}) {
   };
   const [toggler, setToggler] = useState(false);
   const [img, setImg] = useState(null);
+ 
 
   const setTogle = (imgs) => {
     setImg(imgs);
@@ -54,43 +55,46 @@ function Realizacje({data}) {
         <title>Realizacje</title>
       </Head>
       <section>
-        <FsLightbox toggler={toggler} sources={[img]} />
+        {/* <FsLightbox toggler={toggler} sources={[img]} /> */}
+     
 
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid overflow-hidden"
           columnClassName="my-masonry-grid_column cursor-pointer"
         >
-           {data.acf.galleria.map((item) => (
-          
-            <Fade key={item.id}>           
-            <Image             
-              src={item.full_image_url}
-              width="565"
-              height="668"
-              sizes="100vw"
-              style={css}
-              className="img-fluid "
-              onClick={() => setTogle(item.full_image_url)}
-              alt={item.title}
-            />
-          </Fade>
-            ))}         
+          {data.acf.galleria.map((item) => (
+            <Fade key={item.id}>             
+              <Image
+                lazy='true'
+                placeholder="blurDataURL"
+                src={item.full_image_url}
+                width="565"
+                height="668"
+                sizes="100vw"
+                style={css}
+                className="img-fluid "
+                onClick={() => setTogle(item.full_image_url)}
+                alt={item.title}
+              />              
+            </Fade>
+          ))}
         </Masonry>
       </section>
     </>
   );
 }
 
-export const getStaticProps = async() => {
-  
-  const response = await axios.get(`http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/127`);
-  
-  return{
-    props:{
-      data:response.data
-    }
-  }
-}
+export const getStaticProps = async () => {
+  const response = await axios.get(
+    `http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/127`
+  );
+
+  return {
+    props: {
+      data: response.data,
+    },
+  };
+};
 
 export default Realizacje;
