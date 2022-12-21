@@ -18,7 +18,7 @@ function Hero({ data }) {
           w kraju jak i za granicą wraz z profesjonalnym sprzętem pozwala
           świadczyć usługi na najwyższym poziomie.W ofercie znajdziecie także
           usługi niezbędne do kompleksowego remontu i wykończenia wnętrza takie
-          jak: układanie płytek, montaż drzwi i okien, szpachlowanie, malowanie,
+          jak: układanie płytek, montaż płyt karton gips, szpachlowanie, malowanie,
           przeróbki hydrauliczne.
         </p>
         <div className="flex gap-10 icons pt-10">
