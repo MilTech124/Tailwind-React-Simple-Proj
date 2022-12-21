@@ -29,10 +29,12 @@ export default function swiperHero({ data }) {
         className="mySwiper"
       >
         {data.data.acf.photo_gallery.glowna[0].map((item) => (
-          <SwiperSlide id={item.id}>
-            <img
+          <SwiperSlide key={item.id}>
+            <Image 
               src={item.full_image_url}
               sizes="100vw"
+              width="565"
+              height="668"
               style={css}
               className="img-fluid"
               alt={item.caption}
@@ -42,4 +44,6 @@ export default function swiperHero({ data }) {
       </Swiper>
     </>
   );
+  
 }
+

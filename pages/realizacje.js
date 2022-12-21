@@ -7,7 +7,7 @@ import { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 
-function realizacje({data}) {
+function Realizacje({data}) {
   const css = { width: "100%", height: "object-fit" };
   const breakpointColumnsObj = {
     default: 3,
@@ -62,7 +62,7 @@ function realizacje({data}) {
         >
            {data.acf.galleria.map((item) => (
             <Fade key={item.id}>             
-            <img              
+            <Image             
               src={item.full_image_url}
               width="565"
               height="668"
@@ -91,4 +91,4 @@ export const getStaticProps = async() => {
   }
 }
 
-export default realizacje;
+export default Realizacje;

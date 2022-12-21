@@ -2,9 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ['pl'],
-    defaultLocale: 'pl',
+    locales: ["pl"],
+    defaultLocale: "pl",
   },
-}
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "mn-fliz.mil-tech.pl",
+        port: "",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

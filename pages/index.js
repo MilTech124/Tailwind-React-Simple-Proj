@@ -1,13 +1,14 @@
 import React from 'react'
-import Hero from './components/hero/Hero'
-import CustomerAbout from './components/CustomerAbout'
-import Realization from './components/realization/Realization'
-import Services from './components/Services'
+import Hero from '../components/hero/Hero'
+import CustomerAbout from '../components/CustomerAbout'
+import Realization from '../components/realization/Realization'
+import Services from '../components/Services'
 import Head from 'next/head'
 import axios from 'axios'
 
 
 function index(data) {
+  
   return (
     <>
       <Head>        
@@ -31,12 +32,18 @@ function index(data) {
 }
 export const getStaticProps = async() => {
   
-  const response = await axios.get(`http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/2`);
   
-  return{
-    props:{
-      data:response.data
-    }
+  const bioData = await axios.get(
+    'http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/2');
+
+  if(!bioData.data){
+    return <h1>...Loading</h1>
+  }
+  return {
+    props:{        
+        data: bioData.data 
+    },    
+    revalidate:604800
   }
 }
 

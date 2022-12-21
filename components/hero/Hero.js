@@ -1,14 +1,12 @@
 import React from "react";
 import SwiperHero from "./SwiperHero";
 
-function Hero({data}) {
-
+function Hero({ data }) {
   return (
-    <section    
+    <section
       id="hero"
       className="flex md:!flex-nowrap max-sm:flex-wrap max-h-[600px]  max-sm:max-h-fit "
     >
-      
       <SwiperHero data={data} />
       <div className="bg-gray-800 px-10 py-4 md:pt-[100px]  border-l-[20px] max-sm:border-none max-w-[45%]  max-sm:max-w-none border-l-gray-500">
         <h1 className="text-5xl text-white font-roboto font-bold ">
@@ -29,21 +27,22 @@ function Hero({data}) {
             className="hover:scale-110 transition-all ease-in-out"
           >
             {" "}
-            <img src="/svg/Iphone.svg"></img>
+            <img src="/svg/Iphone.svg" alt="icon" />
           </a>
           <a
             href="mailto:nowakmariusz5225@gamil.com"
             className="hover:scale-110 transition-all ease-in-out"
           >
             {" "}
-            <img src="/svg/Mail-hero.svg"></img>
+            <img src="/svg/Mail-hero.svg" alt="icon" />
           </a>
           <a href="#">
             {" "}
             <img
               src="/svg/FacebookIcon.svg"
               className="hover:scale-110 transition-all ease-in-out"
-            ></img>
+              alt="icon"
+            />
           </a>
         </div>
       </div>
