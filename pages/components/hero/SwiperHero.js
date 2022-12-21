@@ -8,16 +8,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-export default function swiperHero() {
-  const css = { width: '100%', height: 'auto' }
+export default function swiperHero({ data }) {
+  const css = { width: "100%", height: "100%" };
   return (
     <>
-      <Swiper    
+      <Swiper
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -30,24 +28,17 @@ export default function swiperHero() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-     
-        <SwiperSlide>
-          <Image src='/images/4.jpg'
-          width="565"
-          height="668"
-          sizes="100vw"
-          style={css}
-          className="img-fluid"
-          alt="something"/>
-        </SwiperSlide>       
-        <SwiperSlide>
-          <Image src='/images/6.jpg'
-            width="565"
-            height="668"
-            sizes="100vw"
-            style={css}
-          className="img-fluid"/>
-        </SwiperSlide>       
+        {data.data.acf.photo_gallery.glowna[0].map((item) => (
+          <SwiperSlide id={item.id}>
+            <img
+              src={item.full_image_url}
+              sizes="100vw"
+              style={css}
+              className="img-fluid"
+              alt={item.caption}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

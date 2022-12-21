@@ -5,34 +5,9 @@ import { Fade } from "react-awesome-reveal";
 import FsLightbox from "fslightbox-react";
 import { useState } from "react";
 import Head from "next/head";
+import axios from "axios";
 
-function realizacje() {
-  const images = [
-    {
-      src: "/images/7.jpg",
-    },
-    {
-      src: "/images/6.jpg",
-    },
-    {
-      src: "/images/5.jpg",
-    },
-    {
-      src: "/images/12.jpg",
-    },
-    {
-      src: "/images/3.jpg",
-    },
-    {
-      src: "/images/2.jpg",
-    },
-    {
-      src: "/images/1.jpg",
-    },
-    {
-      src: "/images/10.jpg",
-    },
-  ];
+function realizacje({data}) {
   const css = { width: "100%", height: "object-fit" };
   const breakpointColumnsObj = {
     default: 3,
@@ -85,25 +60,35 @@ function realizacje() {
           className="my-masonry-grid overflow-hidden"
           columnClassName="my-masonry-grid_column cursor-pointer"
         >
-          {images.map((image, index) => (
-            <Fade>
-              {" "}
-              <Image
-                key={index}
-                src={image.src}
-                width="565"
-                height="668"
-                sizes="100vw"
-                style={css}
-                className="img-fluid "
-                onClick={() => setTogle(image.src)}
-              />
-            </Fade>
-          ))}
+           {data.acf.galleria.map((item) => (
+            <Fade key={item.id}>             
+            <img              
+              src={item.full_image_url}
+              width="565"
+              height="668"
+              sizes="100vw"
+              style={css}
+              className="img-fluid "
+              onClick={() => setTogle(item.full_image_url)}
+              alt={item.title}
+            />
+          </Fade>
+            ))}         
         </Masonry>
       </section>
     </>
   );
+}
+
+export const getStaticProps = async() => {
+  
+  const response = await axios.get(`http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/127`);
+  
+  return{
+    props:{
+      data:response.data
+    }
+  }
 }
 
 export default realizacje;

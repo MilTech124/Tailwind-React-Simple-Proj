@@ -1,13 +1,15 @@
 import React from "react";
 import SwiperHero from "./SwiperHero";
 
-function Hero() {
+function Hero({data}) {
+
   return (
-    <section
+    <section    
       id="hero"
       className="flex md:!flex-nowrap max-sm:flex-wrap max-h-[600px]  max-sm:max-h-fit "
     >
-      <SwiperHero />
+      
+      <SwiperHero data={data} />
       <div className="bg-gray-800 px-10 py-4 md:pt-[100px]  border-l-[20px] max-sm:border-none max-w-[45%]  max-sm:max-w-none border-l-gray-500">
         <h1 className="text-5xl text-white font-roboto font-bold ">
           Profesjonalne <br></br> Usługi Glazurnicze

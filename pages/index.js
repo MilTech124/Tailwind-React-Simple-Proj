@@ -4,9 +4,10 @@ import CustomerAbout from './components/CustomerAbout'
 import Realization from './components/realization/Realization'
 import Services from './components/Services'
 import Head from 'next/head'
+import axios from 'axios'
 
 
-function index() {
+function index(data) {
   return (
     <>
       <Head>        
@@ -20,12 +21,23 @@ function index() {
         <meta name="keywords" content="mn fliz, mn-fliz, usługi glazurnicze, układanie płytek, układanie glazury, układanie płytek słopnice, układanie płytek limanowa, glazurnik limanowa " />
         <title>MN-Fliz Mariusz Nowak</title>
       </Head>
-      <Hero/>
+      <Hero data={data}/>
       <CustomerAbout/>
-      <Realization/>
-      <Services/>
+      <Realization data={data}/>
+      <Services/>   
+      
     </>
   )
+}
+export const getStaticProps = async() => {
+  
+  const response = await axios.get(`http://mn-fliz.mil-tech.pl/wp-json/wp/v2/pages/2`);
+  
+  return{
+    props:{
+      data:response.data
+    }
+  }
 }
 
 export default index
