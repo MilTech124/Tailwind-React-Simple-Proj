@@ -1,5 +1,6 @@
 import React from "react";
 import Masonry from "react-masonry-css";
+import Image from "next/image";
 
 
 function Realization({data}) {
@@ -27,7 +28,7 @@ function Realization({data}) {
       >
         
         {data.data.acf.galeria_na_dole.map((item)=>(
-           <img
+           <Image
            key={item.id}
            src={item.full_image_url}
            width="565"
