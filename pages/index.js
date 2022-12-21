@@ -43,7 +43,7 @@ export const getStaticProps = async() => {
     props:{        
         data: bioData.data 
     },    
-    revalidate:604800
+    revalidate:1000
   }
 }
 
