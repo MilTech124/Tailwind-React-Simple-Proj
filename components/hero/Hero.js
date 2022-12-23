@@ -30,7 +30,7 @@ function Hero({ data }) {
             <img src="/svg/Iphone.svg" alt="icon" />
           </a>
           <a
-            href="mailto:nowakmariusz5225@gamil.com"
+            href="mailto:nowakmariusz5225@gmail.com"
             className="hover:scale-110 transition-all ease-in-out"
           >
             {" "}
