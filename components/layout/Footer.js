@@ -22,7 +22,7 @@ function Footer() {
             Tel:512 803 243 </a>
           </div>          
           <div className='centered ' >
-          <a href='mailto:nowakmariusz5225@gamil.com'>
+          <a href='mailto:nowakmariusz5225@gmail.com'>
             <img src='/svg/mail.svg' className='hover:scale-105 transition-all ease-in'/>
             nowakmariusz5225@gmail.com </a>
           </div>         
